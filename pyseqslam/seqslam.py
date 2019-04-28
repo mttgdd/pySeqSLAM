@@ -243,7 +243,7 @@ class SeqSLAM():
         # TODO parallelize
         matches = np.nan*np.ones((DD.shape[1],2))    
         # parfor?
-        for N in range(self.params.matching.ds/2, DD.shape[1]-self.params.matching.ds/2):
+        for N in range(int(self.params.matching.ds/2), int(DD.shape[1]-self.params.matching.ds/2)):
             # find a single match
             
             # We shall search for matches using velocities between
