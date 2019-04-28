@@ -186,8 +186,8 @@ class SeqSLAM():
     
         #parfor?
         for i in range(D.shape[0]):
-            a=np.max((0, i-self.params.contrastEnhancement.R/2))
-            b=np.min((D.shape[0], i+self.params.contrastEnhancement.R/2+1))                                                        
+            a=int(np.max((0, i-self.params.contrastEnhancement.R/2)))
+            b=int(np.min((D.shape[0], i+self.params.contrastEnhancement.R/2+1)))
             v = D[a:b, :]
             DD[i,:] = (D[i,:] - np.mean(v, 0)) / np.std(v, 0, ddof=1)  
         
